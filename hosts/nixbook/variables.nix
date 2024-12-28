@@ -3,11 +3,6 @@
   gitUsername = "esize";
   gitEmail = "evan@wool.homes";
 
-  # Hyprland Settings
-  extraMonitorSettings = "
-monitor=eDP-1,2560x1600@60,0x0,1.25
-    ";
-
   # Waybar Settings
   clock24h = false;
 
