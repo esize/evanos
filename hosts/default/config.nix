@@ -434,6 +434,7 @@ in
       auth include login
     '';
   };
+  security.pam.services.hyprlock = {};
 
   # Optimization settings and garbage collection automation
   nix = {
