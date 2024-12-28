@@ -118,7 +118,7 @@ in
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/New_York";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
