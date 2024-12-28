@@ -247,7 +247,7 @@ in
     cmatrix
     lolcat
     htop
-    brave
+    google-chrome
     libvirt
     lxqt.lxqt-policykit
     lm_sensors

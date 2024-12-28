@@ -1,7 +1,7 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "Tyler Kelley";
-  gitEmail = "tylerzanekelley@gmail.com";
+  gitUsername = "esize";
+  gitEmail = "evan@wool.homes";
 
   # Hyprland Settings
   extraMonitorSettings = "
@@ -12,7 +12,7 @@ monitor=eDP-1,2560x1600@60,0x0,1.25
   clock24h = false;
 
   # Program Options
-  browser = "brave"; # Set Default Browser (google-chrome-stable for google-chrome)
+  browser = "google-chrome-stable"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "kitty"; # Set Default System Terminal
   keyboardLayout = "us";
 }
