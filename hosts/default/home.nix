@@ -26,6 +26,7 @@ in
     ../../config/waybar.nix
     ../../config/wlogout.nix
     ../../config/fastfetch
+    ../../config/fonts.nix
   ];
 
   # Place Files Inside Home Directory
