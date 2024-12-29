@@ -23,11 +23,6 @@ with lib;
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
           "custom/startmenu"
-          "hyprland/window"
-          "pulseaudio"
-          "cpu"
-          "memory"
-          "idle_inhibitor"
         ];
         modules-right = [
           "custom/hyprbindings"
@@ -35,6 +30,7 @@ with lib;
           "custom/exit"
           "battery"
           "tray"
+          "pulseaudio"
           "clock"
         ];
 
@@ -52,40 +48,6 @@ with lib;
           format = if clock24h == true then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
-        };
-        "hyprland/window" = {
-          max-length = 22;
-          separate-outputs = false;
-          rewrite = {
-            "" = " 🙈 No Windows? ";
-          };
-        };
-        "memory" = {
-          interval = 5;
-          format = " {}%";
-          tooltip = true;
-        };
-        "cpu" = {
-          interval = 5;
-          format = " {usage:2}%";
-          tooltip = true;
-        };
-        "disk" = {
-          format = " {free}";
-          tooltip = true;
-        };
-        "network" = {
-          format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
-          ];
-          format-ethernet = " {bandwidthDownOctets}";
-          format-wifi = "{icon} {signalStrength}%";
-          format-disconnected = "󰤮";
-          tooltip = false;
         };
         "tray" = {
           spacing = 12;
@@ -128,14 +90,6 @@ with lib;
           format = "󱕴";
           on-click = "sleep 0.1 && list-hypr-bindings";
         };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-          tooltip = "true";
-        };
         "custom/notification" = {
           tooltip = false;
           format = "{icon} {}";
@@ -154,29 +108,6 @@ with lib;
           exec = "swaync-client -swb";
           on-click = "sleep 0.1 && task-waybar";
           escape = true;
-        };
-        "battery" = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          format-plugged = "󱘖 {capacity}%";
-          format-icons = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
-          on-click = "";
-          tooltip = false;
         };
       }
     ];
