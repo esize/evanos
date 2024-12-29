@@ -17,7 +17,7 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    { nixpkgs, home-manager, ghostty, ... }@inputs:
     let
       system = "aarch64-linux";
       host = "default";
@@ -33,6 +33,11 @@
             inherit host;
           };
           modules = [
+            {
+              environment.systemPackages = [
+                ghostty.packages.x86_64-linux.default
+              ];
+            }
             ./hosts/${host}/config.nix
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager

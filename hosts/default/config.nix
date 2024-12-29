@@ -284,7 +284,7 @@ in
     spotify
     neovide
     greetd.tuigreet
-  ] ++ ghostty.packages.x86_64-linux.default;
+  ];
 
   fonts = {
     packages = with pkgs; [
