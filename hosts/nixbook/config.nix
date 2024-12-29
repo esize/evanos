@@ -15,10 +15,6 @@ in
     ./hardware.nix
     ./users.nix
     ../../modules/amd-drivers.nix
-    ../../modules/apple-silicon-support
-    ../../modules/nvidia-drivers.nix
-    ../../modules/nvidia-prime-drivers.nix
-    ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
   ];
@@ -27,7 +23,7 @@ in
     # Kernel
     kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = [ "v4l2loopback" "amdgpu" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     # Needed For Some Steam Games
     kernel.sysctl = {
@@ -104,13 +100,6 @@ in
 
   # Extra Module Options
   drivers.amdgpu.enable = false;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "";
-    nvidiaBusID = "";
-  };
-  drivers.intel.enable = false;
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
   # Apple Hardware

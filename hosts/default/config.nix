@@ -14,9 +14,6 @@ in
     ./hardware.nix
     ./users.nix
     ../../modules/amd-drivers.nix
-    ../../modules/nvidia-drivers.nix
-    ../../modules/nvidia-prime-drivers.nix
-    ../../modules/intel-drivers.nix
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
   ];
@@ -102,13 +99,7 @@ in
 
   # Extra Module Options
   drivers.amdgpu.enable = true;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "";
-    nvidiaBusID = "";
-  };
-  drivers.intel.enable = false;
+  drivers.
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
@@ -434,7 +425,11 @@ in
       auth include login
     '';
   };
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = {
+    text = ''
+      auth include login
+    '';
+  };
 
   # Optimization settings and garbage collection automation
   nix = {
