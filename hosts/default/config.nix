@@ -99,7 +99,6 @@ in
 
   # Extra Module Options
   drivers.amdgpu.enable = true;
-  drivers.
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
