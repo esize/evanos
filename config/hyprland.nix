@@ -59,7 +59,7 @@ with lib;
           input {
             kb_layout = ${keyboardLayout}
             kb_options = grp:alt_shift_toggle
-            kb_options = caps:super
+            kb_options = caps:escape
             follow_mouse = 1
             touchpad {
               natural_scroll = true
