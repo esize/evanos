@@ -59,6 +59,11 @@ in
     userEmail = "${gitEmail}";
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+  };
+
   # Create XDG Dirs
   xdg = {
     userDirs = {
