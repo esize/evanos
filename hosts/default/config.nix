@@ -231,6 +231,7 @@ in
     wget
     killall
     eza
+    ghostty
     git
     cmatrix
     lolcat

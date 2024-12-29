@@ -150,9 +150,6 @@ in
         vim_keys = true;
       };
     };
-    ghostty = {
-      enable = true;
-    };
     kitty = {
       enable = true;
       package = pkgs.kitty;
