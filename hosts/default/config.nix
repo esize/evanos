@@ -2,6 +2,7 @@
   config,
   pkgs,
   host,
+  ghostty,
   username,
   options,
   ...
@@ -231,7 +232,6 @@ in
     wget
     killall
     eza
-    ghostty
     git
     cmatrix
     lolcat
@@ -284,7 +284,7 @@ in
     spotify
     neovide
     greetd.tuigreet
-  ];
+  ] ++ ghostty.packages.x86_64-linux.default;
 
   fonts = {
     packages = with pkgs; [
