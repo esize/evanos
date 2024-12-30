@@ -31,6 +31,10 @@ in
     # Bootloader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    loader.grub = {
+      extraConfig = "resume=UUID=1be7c2c9-7cb1-4373-af13-a4da6b232b94";
+    };
+    kernelParams = ["resume=UUID=1be7c2c9-7cb1-4373-af13-a4da6b232b94"];
     # Make /tmp a tmpfs
     tmp = {
       useTmpfs = false;
