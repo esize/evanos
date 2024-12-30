@@ -2,7 +2,6 @@
   config,
   pkgs,
   host,
-  ghostty,
   username,
   options,
   ...
@@ -127,7 +126,6 @@ in
   };
 
   programs = {
-    firefox.enable = false;
     starship = {
       enable = true;
       settings = {
@@ -297,11 +295,6 @@ in
     ];
   };
 
-  environment.variables = {
-    ZANEYOS_VERSION = "2.2";
-    ZANEYOS = "true";
-  };
-
   # Extra Portal Configuration
   xdg.portal = {
     enable = true;
@@ -362,12 +355,6 @@ in
       openFirewall = true;
     };
     ipp-usb.enable = true;
-    syncthing = {
-      enable = false;
-      user = "${username}";
-      dataDir = "/home/${username}";
-      configDir = "/home/${username}/.config/syncthing";
-    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -390,13 +377,8 @@ in
   };
 
   # Extra Logitech Support
-  hardware.logitech.wireless.enable = false;
-  hardware.logitech.wireless.enableGraphical = false;
-
-  # Bluetooth Support
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;

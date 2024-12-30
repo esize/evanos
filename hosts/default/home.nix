@@ -204,7 +204,7 @@ in
       settings = {
         general = {
           disable_loading_bar = true;
-          grace = 10;
+          grace = 1;
           hide_cursor = true;
           no_fade_in = false;
         };
@@ -229,9 +229,9 @@ in
         ];
         input-field = [
           {
-            size = "200, 50";
+            size = "300, 50";
             position = "0, -80";
-            monitor = "";
+            monitor = "HDMI-A-1";
             dots_center = true;
             fade_on_empty = false;
             font_color = "rgb(CFE6F4)";
